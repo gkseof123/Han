@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<style>
+body {
+font-size: 9pt;
+}
+#panel1 {
+border: 1px #000000 solid;
+line-height: 400px;
+font-size: 100px;
+width: 400px;
+height: 400px;
+text-align: center;
+vertical-align: middle;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+var stopinter;
+$('#btn_Start').click(function() {
+clearInterval(stopinter);
+start();
+});
+function start() {
+stopinter = setInterval(moveStart, 100);
+}
+function moveStart() {
+var btn = $('#lab_total').val();
+var num = parseInt(Math.random() * btn + 1);
+$('#panel1').html(num);
+$('#panel1').css('color','#' + (parseInt(Math.random()*0xffffff)).toString(16));
+$('#panel1').css('font-size', parseInt(Math.random() * 300 + 1) + 'px');
+}
+$('#btn_Stop').click(function() {
+clearInterval(stopinter);
+});
+});
+</script>
+</head>
+<body>
+<div>
+<h4>경품추첨기-ver 0.1</h4>
+<div id="panel1"></div>
+<div id="nav">
+참여인원 : <input type="text" id="lab_total" value="100"></input>
+<button id="btn_Start">시작</button>
+<button id="btn_Stop">멈춤</button>
+</div>
+</div>
+</body>
+</html>

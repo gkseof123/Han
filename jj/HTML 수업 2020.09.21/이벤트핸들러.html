@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+    /*
+ window.onload=function(){
+     alert("event handler1 executed") ;
+ }
+ window.onload=function(){
+     alert("event handler2 executed") ;
+ }
+ window.onload=function(){
+     alert("event handler3 executed") ;
+ }
+ */
+/*
+   window.addEventListener("load", function(){
+         alert("event handler1 executed") ;
+   }, false);
+   window.addEventListener("load", function(){
+         alert("event handler2 executed") ;
+   }, false);
+   window.addEventListener("load", function(){
+         alert("event handler3 executed") ;
+   }, false);
+   */
+   /*
+   window.onload=function(){
+       let anchor = document.getElementById("anchor");
+       anchor.onclick=  function(){
+           return false;
+         } 
+       let form = document.getElementsByTagName("form")[0];
+       form.onsubmit = function(){
+           return false;
+       }
+ }
+ */
+
+</script>
+
+<script>
+    /*
+  window.onload=function(){
+     let btn = document.getElementById("hello");
+     btn.onclick = function(){
+         alert("안녕하세요?");
+         //이벤트 핸들러 함수 내부에서 this는 이벤트가 발생한 소스 객체를 
+         //의미합니다.
+         this.onclick = false;
+
+     }
+ }
+    */
+    window.onload=function(){
+     let btn1 = document.getElementById("A");
+     btn1.onclick = function(){
+         let num1 = Number(document.getElementById("num1").innerHTML);
+         document.getElementById("num1").innerHTML = ++num1;
+     }
+     let btn2 = document.getElementById("B");
+     btn2.onclick = function(){
+         let num2 = Number(document.getElementById("num2").innerHTML);
+         document.getElementById("num2").innerHTML = ++num2;
+         btn1.onclick(); //첫번째 버튼의 이벤트 속성에 저장된 핸들러 함수 호출
+     }
+    
+ }
+
+
+
+
+
+</script>
+</head>
+<body> 
+이벤트 처리   <br>
+<a id="anchor" href="http://www.naver.com">네이버 가기</a> <br>
+<form action="data.jsp" method="get">
+    메시지 <input type="text" name="msg" id="msg" > <br>
+    <input type="submit" value="전송" >
+</form>
+버튼을 하나 만들고 버튼을 클릭하면 "안녕하세요?" alert창을 실행시킵니다 <br>
+(한번만 수행되도록 합니다.) 다시 버튼을 클릭하면 "안녕하세요?" 
+alert창은 실행되지 않아야 합니다.  <br>
+
+</div>
+ 
+<button id="hello">인삿말</button>
+<button id="A">+1</button>  <span id="num1">0</span> <br>
+<button id="B">+1하고 버튼 클릭시킴</button> <span id="num2">0</span> <br>
+<button id ="C">+5</button> <span id = "num3">0</span><br>
+</body>
+</html>

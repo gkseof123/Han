@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	 body{
+			font-size:9pt;
+		
+		}
+		
+		div{
+			border: 1px solid #999999;
+			margin:20px;
+			margin-bottom:20px;
+		}
+		div div{
+			border: 1px dotted #CCC;
+			font-size:20px;	
+		}
+		
+		#panel {
+			width:600px;
+			overflow:visible;		
+
+		}
+    
+
+	</style>
+	<script>
+	 window.onload = function(){
+         var panel =document.getElementById('panel');
+         var array = ["Red", "Orange", "Blue"];
+         var now = 1;
+         setInterval(function(){
+         var random = parseInt(Math.random()*50+11);
+         var i = parseInt(Math.random()*array.length+0);
+         panel.style.fontSize = random+'PX';
+         //panel.style.color = array[i];
+         panel.style.color = '#'+(parseInt(Math.random()*0xffffff)).toString(16);
+         panel.innerHTML+=now+',';
+         now++;
+         },1000);
+
+         }
+	</script>
+</head>
+
+<body>
+    <div> 
+		<h4>미션2 - 1초에 하나씩 1부터 숫자를 증가시키며 #panel에 추가 시켜 주세요.<br> 단, 폰트 크기( 10px~ 50px)와 색은  랜덤으로 설정해주세요.</h4>
+		<div id="panel">
+		</div>
+	</div>
+</body>
+</html>

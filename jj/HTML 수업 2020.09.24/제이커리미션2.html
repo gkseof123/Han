@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+
+
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  
+  $(document).ready(function(){
+      $("#my_form").submit(function(e){          
+            e.preventDefault(); //기본 이벤트 취소
+        let pass1 = $("#pass").val();         
+        let pass2 = $("#pass_check").val();
+        if(pass1.length<4 && pass2.length<4) {
+            alert("패스워드는 4자 이상 입력해야 합니다.");        
+            if(pass1 != pass2){
+                alert("패스워드가 일치하지 않습니다.");
+            }else{ 
+             location.assign("http://www.naver.com");
+            }
+          }
+     });
+}  );
+ 
+  </script>
+
+
+</head>
+<body>
+    <form id="my_form">
+        <label for="name">이름</label><br/>
+        <input type="text" name="name" id="name"/><br/>
+        <label for="pass">비밀번호</label><br/>
+        <input type="password" name="pass" id="pass" value=""/><br/>
+        <label for="pass_check">비밀번호 확인</label><br/>
+        <input type="password" id="pass_check"/><br/>
+        <input type="submit" value="제출"/>
+    </form>
+ 
+</body>
+</html>

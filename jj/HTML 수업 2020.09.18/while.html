@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+    <!--<script>
+ let books = [];
+ let fruits = ['apple','grape','banana','orange'];
+ document.write(books.length+"<br>");
+ document.write(fruits.length+"<br>");
+ document.write(fruits[2]+"<br>") ;
+ books[0] = "javascript";
+books[2] = "html";
+books[5] = "css3";
+
+for(let i=0; i<books.length; i++){
+document.write(books[i]+"<br>");
+}
+document.write(typeof(books)+"<br>");//object,객체
+
+    </script>
+    <script>
+        let array = [1, true, "javascript", [100,200], function(){}, new Array(), {} ]
+for(let i=0; i<array.length; i++){
+document.write(array[i]+","+typeof(array[i])+"<br>");
+}
+    </script>
+ 
+    <script>
+        function GetLotto(){
+
+            var lotto = new Array(6);
+            var count = 0;
+            var mFlag = true;
+            while(count<6){
+                var number;
+                number = parserlnt(Math.random()*45)+1
+                for (var i=0; i<count; i++)
+                if(lotto[i] == number) mFlag = false;
+                if(mFlag){
+                    lotto[count] = number;
+                    count++;
+                }
+                mFlag = true;
+            }
+            alert(lotto[0]+', '+lotto[1]+', '+lotto[2]+', '+lotto[3]+', '+lotto[4]+', '+lotto[5]);
+        }
+        document.write("<br>");
+    </script>
+    <script>
+let lotto = [];
+lotto[0] = Math.trunc(Math.random()*45 +1);
+for (let i=1;i<6;i++){
+   let lotto_num = Math.trunc(Math.random()*45 +1);
+   for (let j=0; j< i ; j++){
+       if (lotto[j] == lotto_num) {
+         i--;
+         break;
+         }
+   }
+   if (i==lotto.length) lotto[i] = lotton_num;
+}
+
+for (let i=0;i<lotto.length;i++){
+  document.write(lotto[i]+"  ");
+}
+
+    </script>-->
+    <!--<script>
+        
+      for (let idx in fruits){
+    document.write(fruits[idx]+"<br>"); }
+
+
+for (let item of fruits){ //ECMAScript6에서 추가됨
+ document.write(item+"<br>");}
+
+document.write(item+"<br>"); //?
+{
+    let a = 100;
+    document.write((a*2)+"<br>");
+
+}
+document.write((a*2)+"<br>");
+
+let  x = 1;
+let y = 1;
+{
+    let x = 2;
+{
+    let x= 3;
+    let z = 3;
+    console.log(x);
+    console.log(y);
+}
+}
+
+    </script>-->
+    호스팅 (hoisting)<br>
+    변수는 먼저 정의한 후에 사용 및 참조 가능합니다.<br>
+    함수의 경우에는 먼저 호출하고 나중에 정의해도 패이지가 로딩될때 함수 정의가 먼저 메모리에 로딩이 된다. 이것이 호이스팅이다.<br>
+    <!--<script>
+        let result = x*2;
+        console.log(result);
+        let x = 3;
+    </script>-->
+    <script>
+        f1();
+        function f1(){
+            console.log("함수 f1 called!!");
+        }
+    </script>
+   브라우저 벤더에서 구현해서 제공하는 체상위 객체 : window<br>
+   <script>
+       var akasha1  = "한대희"
+       let akasha2  = "HAN"
+       console.dir(window);
+   </script>
+</body>
+</html>

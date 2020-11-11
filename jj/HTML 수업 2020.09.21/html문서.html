@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+ 
+</script>
+</head>
+<body> 
+html문서 객체 - document<br>
+문서의 구조 변경  <br>
+<script>
+    
+ console.dir(document) 
+ let h3 = document.createElement("h3");
+ let content1 = document.creatTextNode("내용");
+ h3.appendChild(content1);
+ document.body.appendChild(h3);
+ let img1 = document.createElement("img");
+ img1.widt=200;
+ img1.setAttribute("height",200);
+ img1.src="../images/야스오.jpg";
+ document.body.appendChild(img1);
+ 
+
+</script> 
+</body>
+</html>

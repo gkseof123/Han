@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  
+  $(document).ready(function(){
+     //localStorage객체 getItem(key), setItem(key, value), removeItem(key)
+     let info=JSON.parse(localStorage.getItem("phonebook"));
+     if (info == null) {
+        localStorage.setItem("phonebook", JSON.stringify(new Array()));
+     }
+     storageShow();
+    //추가 버튼을 누르면 입력된 이름과 전화번호를 가져와서 변수에 저장합니다.
+     
+    $("#add").click( function(){
+        let info=JSON.parse(localStorage.getItem("phonebook"));
+        value1 = $("name").val();
+        value2 = $("phone").val();
+        info[info.length] = {"name":value1, "phone":value2 };
+        localStorage.setItem("phonebook", JSON.stringify(info));
+        storageShow();
+        $("name").val("");
+        $("phone").val("");
+    });
+    //모두 삭제 버튼 클릭 이벤트 - 
+    //phonebook 으로 저장된 배열을 내용을 모두 지움     
+    $("#clear").click( function(){
+        localStorage.setItem("phonebook", JSON.stringify(new Array()));
+        storageShow();
+    });
+    
+});  
+ function storageShow(){
+    let info=JSON.parse(localStorage.getItem("phonebook"));
+    let message="";
+    for (let i=0;i<info.length;i++) {
+        message+= info[i].name +", "+info[i].phone +", " +
+        "<a href='javascript:infoRemove("+i+");'>삭제</a><br>"
+    }
+    $("#output").html(message);
+ }
+
+ function infoRemove(idx){
+    let info=JSON.parse(localStorage.getItem("phonebook"));
+    info.splice(idx, 1);
+    localStorage.setItem("phonebook", JSON.stringify(info));
+    storageShow();
+ }
+  </script>
+
+
+</head>
+<body>
+    <div id="output"></div>
+    이름: <input id="name" type=text size=8 />
+    전화: <input id="phone" type=text size=12 />  
+    <input type=button id="add" value='추가'> &nbsp; 
+    <input type=button id="clear" value='모두 제거'>
+     
+</body>
+</html>

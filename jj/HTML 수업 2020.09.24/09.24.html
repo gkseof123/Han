@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+<style>
+    .reverse{
+        background: rgb(138, 95, 95);
+        color: rgb(116, 116, 211);
+    }
+</style>
+
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  
+   $(document).ready(function(){
+       //$('img').css('width','250');
+       //setInterval(function(){
+         //  $('img').first().appendTo('body');
+      //  },2000);
+
+       // $('div').append($('h1').clone());
+       // $("button").click(function(){
+       // $("p:first").replaceWith("Hello world!");
+       // });
+       $('h1').hover(function(){
+           $(this).addClass('reverse');
+       }, function () {
+           $(this).removeClass('reverse');
+       });
+       $('h1').toggle(function (){
+
+       })
+       $('h1').html(function (index,html){
+           return '♨' + html;
+       }, function (){
+        $(this).html(function (index, html){
+            return html + '♨';
+        });
+    });
+});
+ 
+  </script>
+
+
+</head>
+<body>
+    <!--
+<img src="ch2.png">
+<img src="ch3.png">
+<img src="번개.png">
+<img src="눈.jpg">
+<img src="야스오.jpg">
+   
+<h1>HAEDER</h1>
+<hr><div></div></hr>
+<p>paragraph1</p>
+<p>paragraph2</p>
+<button>첫번째 단락 태그 내용을 relpace</button>
+ -->
+ <h1>Header-0</h1>
+ <h1>Header-1</h1>
+ <h1>Header-2</h1>
+ 
+</body>
+</html>

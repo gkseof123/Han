@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+   
+</script>
+</head>
+<body>
+    <h3>연산자 :</h3>
+    <ul>
+      <li>단항연산자</li>
+      <li>이항연산자</li>
+      <li>삼항연산자</li>
+    </ul> 
+    <br>
+    <ul>
+        <li>산술 연산자 (+, *, -, %, /) </li>
+        <li>비교 연산자 (&gt;, &lt;, >=, &gt;=, ==, != )</li>
+        <li>논리 연산자(!,&&,||)ex)조건1&&조건2</li>
+        <li>증감 연산자 (++,--)</li>
+        <li>할당 연산자 (연산자 축약 형태)ex) a=+b는 a+=b 동일합니다</li>
+      </ul> 
+    <script>
+         let a = 10, b= 3;
+         document.write(a%b +"<br>");//나머지
+         let s1 = "javascript", s2 ="hello~";
+         //문자열과 함께 사용되는 +연산자는 결합 => 문자열 변환
+         document.write(s2 + s1 + 6 + true); 
+         document.write("\"javascript\""+"<br>"); 
+         document.write('\'javascript\''+"<br>"); 
+         document.write(s2 + '\\' +s1 +"<br>");
+         document.write(s2[0]+"<br>");
+         document.write(s2[4]+"<br>"); //[]를 사용해서 문자 선택 가능
+         document.write((a==b)+"<br>");
+         document.write((a!=b)+"<br>");
+         document.write((a<b)+"<br>");  //비교 연산의 결과는 boolean값입니다.
+         document.write((s1<s2)+"<br>");  //?
+         document.write((30>20>10)+"<br>");//true를 1 정수변환
+
+         document.write(!(30>20>10)+"<br>");
+         document.write((a<b && a!=b)+"<br>");
+         document.write((a<b || a!=b)+"<br>");
+         document.write(++a + "<br>")//11
+         document.write(a++ + "<br>")//11
+         document.write(a + "<br>")//12
+         document.write(--a + "<br>")//11
+         document.write(a-- + "<br>")//11
+         document.write(a + "<br>")//11
+         let c;
+         document.write(typeof(c) + "<br>") //undifined
+         document.write((a+c)+"<br>") //NaN
+
+
+    </script>
+     타입 변환 : Number(), String(), Boolean() 생성자 함수<br>
+     <script>
+         document.write(Boolean(c)+"<br>")//undefined
+         document.write(Boolean(0)+"<br>")//false
+         document.write(Boolean(10)+"<br>")//true
+         document.write(Boolean('')+"<br>")//false
+         document.write(Boolean(' ')+"<br>")//true
+         document.write(Boolean(NaN)+"<br>")//false
+
+         document.write(!!c+"<br>")//undefined
+         document.write(!!0+"<br>")//false
+         document.write(!!10+"<br>")//true
+         document.write(!!''+"<br>")//false
+         document.write(!!'  '+"<br>")//true
+         document.write(!!NaN+"<br>")//false
+ </script>
+ 템플릿 문자열 - format형식을 가지는 문자열 (문자열의 일부를 미완성으로 구성하고 실행할때 값을 전달해서 문자열을 완성해 출력합니다)
+ <br>
+ <script>
+     let txt = '계산 결과는 ' + a +"+" + b +"=" + (a+b) ;
+     document.write(txt +"<br>");
+     let txt2 =`계산결과는 ${a} + ${b} = ${a+b}`;
+     document.write(txt2  +"<br>");
+     let x = '123', y=123;
+     document.write((x==y) + "<br>")//비교 연산을 위해 자동 형변환이 일어남
+     document.write((x===y) + "<br>")//형변환된 값만 비교하는 것이 아니라  타입도 비교합니다.
+ 
+</script>
+</body>
+</html>

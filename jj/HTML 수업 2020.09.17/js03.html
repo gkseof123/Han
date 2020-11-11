@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+   function calc(){
+       let n1 = Number(document.getElementById("num1").value);
+       let n2 = Number(document.getElementById("num2").value);
+       let selectComp = document.getElementById("op");
+       let selectedIndex = selectComp.selectedIndex;
+       let operator = selectComp.options[selectedIndex].value;
+       //console.log(n1, n2, operator);
+       let result = 0;
+       if (operator=="+"){
+           result = n1+n2;
+         }else if(operator=="-"){
+            result = n1-n2;
+         }else if(operator=="*"){
+            result = n1*n2;
+         }else if(operator=="/"){
+            result = n1/n2;
+         }
+         document.getElementById("result").innerHTML += result;
+   }
+
+</script>
+</head>
+<body>
+  
+    변수, 상수 <br>
+    <script>
+        let a = 1;
+        a=2;
+        const b = 100;
+       // b=5;
+
+    </script>
+    <form>
+       number1 :  <input type="text"  id="num1"  name="num1" >  <br>
+       연산자 : <select id="op" name="op">
+           <option value="+">+</option>
+           <option value="-">-</option>
+           <option value="*">*</option>
+           <option value="/">/</option>
+       </select> <br>
+       number2 :  <input type="text"  id="num2"  name="num2" > <br>
+       <input type="button" value="계산" onclick="calc();">
+    </form> 
+     <hr>
+     <div id="result">
+         연산결과 :  
+     </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+    .image_panel{
+        border:1px solid eeeeee;
+        text-align:center;
+        margin:5px;
+    }
+    .image_panel .title{
+        font-size:9pt;
+        color:#ff0000;
+        
+    }
+    #num {
+        font-size:32pt;
+        color:#00ff00;
+    }
+    
+</style>
+<script>
+  var xhr = null;
+  window.onload = function(){
+      let btn = document.getElementById("btn_load");
+      btn.onclick = function(){
+         xhr = new XMLHttpRequest();
+         xhr.open("get", "images.jsp", true);
+         xhr.onreadystatechange = showImage;
+         xhr.send(null);         
+      }
+  }
+
+  function showImage(){
+      if(xhr.readyState==4){
+      if(xhr.status==200){
+          let txt = xhr.responseText;
+          let images = JSON.parse(txt).rows;
+      //JSON.pares(data)
+     
+      let strDom = "";
+      for (let i=0;i<images.length;i++){
+          let image = images[i];
+          strDom += '<div class="image_panel">'
+          strDom += '<img src= '+images.url+'>'
+          strDom += '<p class="title">'+ images.name+'</p>'
+          strDom += '</div>'
+                }
+                document.getElementById("image_container").innerHTML = strDOM;
+  }
+
+     
+  }
+  }
+</script>
+</head>
+<body>
+    <div id="num">
+    <script>
+        window.setInterval(function(){                    
+            document.getElementById("num").innerHTML = Math.random();
+         }, 500);
+    </script>
+
+    </div>
+    <div>
+		<button id="btn_load">이미지 읽어들이기</button>
+	</div>
+	<div id="image_container">
+        <div class="image_panel">
+			<img >
+			<p class="title"></p>
+		</div>
+    </div>
+</body> 
+</html>

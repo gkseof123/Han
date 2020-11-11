@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script></script>
+</head>
+<body>
+    함수의 인수 개수보다 파라미터를 많이 전달하거나 적게 전달하면?<br>
+    자바스크립트에서는 모든 함수는 생성될때 함수내에 arguments 배열과 유사한 객체 생성되고 전달된 인수 값들이 arguments에 저장됩니다.<br>
+
+    <script>
+        
+    function f1(a, b, c){   
+        console.log(a);
+        console.log(b);
+        console.log(c); 
+     }
+     f1(1, 2, 3, 4); 
+     f1('a', 'b'); 
+
+     function f2( ){  
+    console.log("인수의 개수 :" +arguments.length); 
+    for(let item of arguments){
+        console.log(item);
+    } 
+        
+ }
+/* f2();
+ f2([1,2,3,4]);
+ f2(1, 2, 3, 4, 5);*/
+//console.dir(f2);
+function plus() {
+    let result;
+    if (arguments.length==0){
+        result = 0;
+    }else if (arguments.length==1){
+        result = arguments[0];
+    }else if (arguments.length==2){
+        result = arguments[0] + arguments[1]  ;
+
+    }else{
+        for( let num of arguments){
+            result += num;
+        }
+    }
+return result;
+    
+}
+
+</script>
+함수의 인수로 함수를 전달할 수 있습니다.<br>
+<script>
+    function caller(g) {
+        for(let i=0; i<10;i++){
+            g();
+        }
+        
+    }
+    function callee() {
+    console.log("hello");
+        
+    }
+    caller(callee);
+</script>
+함수 내부에 함수를 정의할수 있습니다.<br>
+함수 내부에 정의된 함수는 정의된 함수 영역 안에서만 호출이 가능하다.<br>
+<script>
+function outer(a){    
+    function inner(){
+        console.log(a**2);
+    }
+    console.log(a**10);
+    inner();
+}
+outer(2);
+//inner(); //?
+</script>
+함수는 함수정의를 리턴할수 있습니다.<br>
+<script>
+/*function func1 (){
+   let local = 100;
+   return function() {
+            return local /= 5;
+           }
+}
+//console.log(local); 
+console.log(func1()());
+let n = func1();
+console.log(n());
+
+let result = ((a,b) => a+b)(3,4);
+console.log(result);
+
+let f5 = (a,b) => a+b;
+console.log(f5(5,4));*/
+window.onload=function(){
+    window.setTimeout(function(){
+        alert("Bye~Happy Weekend!!!!");
+    },5000);
+    setInterval(function(){
+        document.body.innerHTML+="Bye~Hppay Weekened!!!<br>";
+    },3000);
+}
+
+</script>
+let rId = window.setTimeout(함수,시간): 함수가 특정 시간 안에 한번만 수행되도록 예약함<br>
+clearTimeout(rId) - 선언된 시간이 경과하지 않은 경우 예약한 함수 수행을 최소<br>
+do {<br>
+반복 수행문장;<br>
+}while(조건);<br>
+updown게임<br>
+컴퓨터는 1~100사이의 난수 생성해서 변수에 저장
+도전자(이용자)로부터 수를 입력 받아서, 값을 비교해서 up이나down 하라고 알려줌<br>
+5번의 도전 기회를 주고 도전자가 맞추면 "You Win!! You Best!!"<br>
+5번의 도전 기회동안 못맞추면 "You Fail, I Win!"<br>
+<script>
+    
+    
+</script>
+</body>
+</html>

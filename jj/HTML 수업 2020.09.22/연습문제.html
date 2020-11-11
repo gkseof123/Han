@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+  
+  </style>
+<script>
+ window.onload = function(){
+     let frm = document.getElementById("my_form");
+     frm.onsubmit = function(e){
+         //return false;
+         e.preventDefault(); //기본 이벤트 취소
+        let pass1 = document.getElementById("pass").value;
+         //console.log(pass1);
+        let pass2 = document.getElementById("pass_check").value;
+        if(pass1.length<4 && pass2.length<4) {
+            alert("패스워드는 4자 이상 입력해야 합니다.");
+        }
+        if(pass1 != pass2){
+            alert("패스워드가 일치하지 않습니다.");
+        }else{ 
+          location.assign("file:///C:/Users/KOSTA/Desktop/%EC%88%98%EC%97%85/HTML%20%EC%88%98%EC%97%85%202020.09.21/%EA%B2%BD%ED%92%88%20%EC%B6%94%EC%B2%9C%EA%B8%B0.html");
+        }
+     }
+}  
+ 
+ 
+
+</script>
+</head>
+<body> 
+이벤트 처리   <br>
+ 
+    <form id="my_form">
+        <label for="name">이름</label><br/>
+        <input type="text" name="name" id="name"/><br/>
+        <label for="pass">비밀번호</label><br/>
+        <input type="password" name="pass" id="pass" value="" minlength="4" maxlength="8"/><br/>
+        <label for="pass_check">비밀번호 확인</label><br/>
+        <input type="password" id="pass_check"/><br/>
+        <input type="submit" value="제출"/>
+        
+    </form>
+ 
+
+</body>
+</html>

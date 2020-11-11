@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+<style type="text/css">
+    td {
+      border-style: solid;
+      border-width: 1px;
+      font-size: 300%;
+    }
+
+    td:hover {
+      background-color: cyan;
+    }
+
+    #hoverResult {
+      color: green;
+      font-size: 200%;
+    }
+  </style>
+  
+</style>
+
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+    $("#findChecked").click(function() {
+        let result = "Selected boxes are: ";
+     $("input:checked").each(function(index, item) { 
+           //console.log(item.name);       
+          result += (item.name + " ");
+        });      
+    $("#checkedResult").html(result);
+  }) 
+});
+ 
+  </script>
+
+
+</head>
+<body>
+    <section>
+        <!-- create a table with a 3 by 3 cell display -->
+        <table>
+            <tr>
+                <td><input type="checkbox" name="A1">A1</td>
+                <td><input type="checkbox" name="A2">A2</td>
+                <td><input type="checkbox" name="A3">A3</td>
+              </tr>
+        
+              <tr>
+                <td><input type="checkbox" name="B1">B1</td>
+                <td><input type="checkbox" checked name="B2">B2</td>
+                <td><input type="checkbox" name="B3">B3</td>
+              </tr>
+        
+              <tr>
+                <td><input type="checkbox" name="C1">C1</td>
+                <td><input type="checkbox" name="C2">C2</td>
+                <td><input type="checkbox" name="C3">C3</td>
+              </tr>
+        </table>
+    
+        <div>Focus the button, hover over the table cells, and hit Enter to identify them using querySelector('td:hover').</div>
+        <button type="button" id="findHover" autofocus>Find 'td:hover' target</button>
+        <div id="hoverResult"></div> 
+    </section>
+  
+</body>
+</html>

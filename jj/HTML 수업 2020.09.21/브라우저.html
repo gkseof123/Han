@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+ 
+</script>
+</head>
+<body> 
+ 브라우저 객체 - window <br>
+ window.open(URL, name, { options } , replace) <br>
+ location 객체 - 주소와 관련 객체 <br>
+ 프로토콜://도메인주소:port/webcontext/path/.../xxxx.html&key=value&key=value...<br>
+ assign(), reload(), replace() <br>
+ navigator 객체 - 브아루저 정보, geolocation 객체, 운령체제 정보, online상태, offline 정보 <br>
+ screen 객체 - 컴퓨터 화면 정보 (width, height, 색상 픽셀정보 , orientation)<br>
+ history 객체 - 주소 이력 정보   (back(), forward(), go()) <br>
+<script>
+console.dir(window);
+//var myWindow = window.open("", "MsgWindow", "width=300,height=300");
+//myWindow.document.write("<p>This is 'MsgWindow'. I am 300px wide and 300px tall!</p>");
+//var myWindow = window.open("http://www.naver.com", "_self");
+
+//var myWindow = window.open("http://www.naver.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+
+</script> 
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="closeWin()">Close "myWindow"</button>
+<script>
+function openWin() {
+  myWindow = window.open("", "myWindow", "width=200,height=100");
+  myWindow.document.write("<p>This is 'New Window' </p>"   );
+}
+
+function closeWin() {
+  myWindow.close();   // Closes the new window
+}
+</script>
+<br>
+<button onclick="myFunction()">Load new document</button>
+<button onclick="myReload()">현재 페이지 새로고침</button>
+<script>
+    function myFunction() {
+        location.assign("https://www.google.com");
+    }
+    document.write("<br>"+ Math.random()+"<br>" )
+    function myReload() {//
+       // location.reload(); 
+       //location.href = location.href;
+       location.replace("http://www.daum.net");
+    }
+    console.dir(screen);
+    console.dir(navigator);
+</script>
+<button onclick="goBack()">이전 페이지</button>
+<button onclick="goFoward()">다음 페이지</button>
+<button onclick="goBackBack()">이전이전 페이지</button>
+<script>
+   function goBack() {
+          window.history.back();
+    }
+    function goForward() {
+       window.history.forward();
+    }
+    function goBackBack() {
+          window.history.go(-2);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+div, p, span {border : solid 2px black;
+            position : relative;
+    }
+#d2, #d3, #p1 {
+    top: 50px;
+    left: 50px;
+}
+#d1 { 
+      width:500px;
+      height:400px;
+     }
+#d2 { 
+      width:400px;
+      height:300px;
+     
+       }
+#d3 {  
+      width:300px;
+      height:200px;
+       }    
+#p1 {  
+      width:200px;
+      height:100px;
+      }  
+ #inner {        
+       font-size : 20px;
+       position: relative;
+       top: 20px;
+       left: 20px;
+      }            
+</style>
+<script>
+    window.onload = function(){
+        document.getElementById("d1").onclick = function(evt){
+            evt.stopPropagation()
+            this.style.background = "red"
+        }
+        document.getElementById("d2").onclick = function(evt){
+            evt.stopPropagation()
+            this.style.background = "orange"
+        }
+        document.getElementById("d3").onclick = function(evt){
+            evt.stopPropagation()
+            this.style.background = "yellow"
+        }
+        document.getElementById("p1").onclick = function(evt){
+            evt.stopPropagation()
+            this.style.background = "green"
+        }
+   
+        document.getElementById("inner").onclick = function(evt){
+            evt.stopPropagation()
+            this.style.background = "blue"
+            this.style.color = "#ffffff";
+        }
+   
+    }
+ 
+     
+ 
+
+</script>
+</head>
+<body> 
+이벤트 버블링 : 브라우저에서 기본적으로 지원, 자식 객체에서 이벤트가 발생하면 부모객체에게 전파됨   <br>
+부모객체에 이벤트 전파를 막으려면 Event객체에 stopPropagation()를 호출합니다.<br>
+자바스크립트의 모든 이벤트 핸들러 메서드가 호출될때 자동으로 Event객체가 첫번째 인수(파라미터)로 전달됩니다.<br>
+<div id="d1">
+    <div id="d2">
+        <div id="d3">
+          <p id="p1">
+              <span  id="inner">
+               이벤트 전파 방식 
+            </span>
+          </p>       
+        </div>    
+    </div>
+</div>
+ 
+</body>
+</html>

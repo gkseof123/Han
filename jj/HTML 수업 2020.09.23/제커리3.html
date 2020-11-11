@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+<style>
+    div 
+    {
+        margin:10px;
+        border:3px Solid Black;
+        border-radius:10px;
+        float:left;
+        width:120px; height:120px;
+        text-align:center;
+    }
+</style>
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  
+   $(document).ready(function(){
+      // $('h3').filter(function(index){
+          // return index % 3 == 0;
+      // }).css({
+       //    backgroundColor: 'black',
+       //    color: 'white',
+      // });
+     // $('h1').css('background', 'Blue').filter(':even').css('color', 'White').end().filter(':odd').css('color', 'Red');
+
+      // $('h1').css('backgroun', 'Orange');
+      // $('h1:even').css('color', 'White');
+      // $('h1:odd').css('color', 'Red');
+
+   });
+     // 변수를 선언합니다.
+     var xml = '';
+        xml += '<friends>';
+        xml += '    <friend>';
+        xml += '        <name>연하진</name>';
+        xml += '        <language>Ruby</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>윤명월</name>';
+        xml += '        <language>Basic</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>윤하린</name>';
+        xml += '        <language>C#</language>';
+        xml += '    </friend>';
+        xml += '</friends>';
+   $(document).ready(function(){
+       var xmlDoc = $.parseXML(xml);
+       $(xmlDoc).find('friend').each(function(index){
+           var output = '';
+           output += '<div>';
+            output += '      <h1>'+ $(this).find('name').text()+'</h1>';
+            output += '            <p>'+$(this).find('language').text()+'</p>';
+            output += '</div>';
+            document.body.innerHTML += output;
+
+                   });
+     
+   });
+ 
+  </script>
+
+
+</head>
+<body>
+    
+   <h1>Header-1</h1>
+    <h1>Header-2</h1>
+    <h1>Header-3</h1>
+ <h3>Header-0</h3>
+ <h3>Header-1</h3>
+ <h3>Header-2</h3>
+ <h3>Header-3</h3>
+ <h3>Header-4</h3>
+ <h3>Header-5</h3>
+ <h3>Header-6</h3>
+
+
+</body>
+</html>

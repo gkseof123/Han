@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+  
+  </style>
+<script>
+   
+  window.onload = function(){
+      //새로운 Option객체 만들때 new Option()
+      let right = document.getElementById("right");
+      let menus = document.getElementById("menu");
+      let my = document.getElementById("my");
+      right.onclick = function(){
+          let selectMenu = new Option(menus.options[menus.selectedIndex].value, menus.options[menus.selectedIndex].text);
+          my.options[my.length] = selectMenu;
+          menu.options[menus.selectedIndex] = null;
+        }
+      let left = document.getElementById("left");
+      left.onclick = function(){
+        let selectMenu = new Option(my.options[my.selectedIndex].value, my.options[my.selectedIndex].text);
+          menu.options[menu.length] = selectMenu;
+          my.options[my.selectedIndex] = null;
+
+      }
+
+
+     
+  }
+ 
+
+</script>
+</head>
+<body> 
+select, change 이벤트 처리 <br>
+<table>
+    <tr><td>메뉴</td><td></td><td>나만의 메뉴</td></tr> 
+    <tr><td> <select name="menu" id="menu" size="8">
+    <option value="파일">파일</option>
+    <option value="편집">편집</option>
+    <option value="보기" >보기</option>
+    <option value="서식">서식</option>
+    <option value="삽입">삽입</option>
+    <option value="도구">도구</option>
+    <option value="디자인">디자인</option>
+    </select></td>
+    <td align="center" valign="middle">
+    <input type="button" value="&lt;&lt;"  id="left" /><br />
+    <input type="button" value="&gt;&gt;"  id="right"/> </td>
+    <td> <select name="my" id="my" size="8"> 
+    </select> </td></tr></table>
+</form>
+</body>
+</html>

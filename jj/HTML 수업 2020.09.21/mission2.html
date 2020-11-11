@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	 body{
+			font-size:9pt;
+		
+		}
+		
+		div{
+			border: 1px solid #999999;
+			margin:20px;
+			margin-bottom:20px;
+		}
+		div div{
+			border: 1px dotted #CCC;
+			font-size:20px;	
+		}
+		
+		#panel {
+			width:600px;
+			overflow:visible;		
+
+		}
+    
+
+	</style>
+	<script>
+	  //window.setInterval()
+     //Math.random()
+     //document.setAttribute("style", "color:rgb(난수, 난수, 난수)");
+     //document.setAttribute("style", "font-size: 난수");
+     //문서객체.innerHTML += "내용"
+     let count = 0;
+    window.onload = function(){
+     let panel = document.getElementById("panel");
+     setInterval(addNumber, 1000);     
+    }
+    function addNumber(){
+        count++;
+        let span = document.createElement("span");
+        span.style.color = "#"+parseInt(Math.random()*255).toString(16)
+                        +parseInt(Math.random()*255).toString(16)
+                        +parseInt(Math.random()*255).toString(16);
+        span.style.fontSize = (10+parseInt(Math.random()*40))+"px";
+        span.style.display = "inline-block";
+        span.innerHTML += count;
+        panel.appendChild(span);
+        window.scrollTo(0, window.document.body.scrollHeight);
+    }
+	</script>
+</head>
+
+<body>
+    <div> 
+		<h4>미션2 - 1초에 하나씩 1부터 숫자를 증가시키며 #panel에 추가 시켜 주세요.<br> 단, 폰트 크기( 10px~ 50px)와 색은  랜덤으로 설정해주세요.</h4>
+		<div id="panel">
+		</div>
+	</div>
+</body>
+</html>

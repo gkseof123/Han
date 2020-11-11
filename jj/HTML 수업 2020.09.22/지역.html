@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+  
+  </style>
+<script>
+  var seoul = new Array("강남구", "서초구", "종로구", "중구", "노원구");
+	var kyunggi = new Array("수원시", "성남시", "고양시", "안성시", "용인시");
+  window.onload = function(){
+     let select1 = document.getElementById("city");
+     let select2 = document.getElementById("gu");
+     //console.log(select1.tagName);
+     select1.onchange = function(){
+          let idx = this.selectedIndex;
+          //alert (this.selectedIndex);
+          //alert(this.options[idx].text); //this.options[this.selectedIndex]
+          if (idx==1){
+              for (let i=0;i<seoul.length;i++) {
+              select2.options[i].text = seoul[i];
+              }
+          }else  if (idx==2){
+              for (let i=0;i<kyunggi.length;i++) {
+              select2.options[i].text = kyunggi[i];
+              }
+          }
+     } 
+     
+  }
+ 
+</script>
+</head>
+<body> 
+select, change 이벤트 처리 <br>
+<form name="form1">
+  지역을 선택하세요.<br /><br />
+  시.도 <select name="city"  id="city" >
+  <option >지역을 선택하세요</option>
+  <option >서울</option>
+  <option >경기</option>
+  </select>
+  &nbsp;&nbsp;&nbsp;
+  시.구 <select name="gu"  id="gu">
+  <option >선택하세요</option>
+  <option ></option>
+  <option ></option>
+  <option ></option>
+  <option ></option>
+  <option >직접입력</option>
+  </select>
+</form> 
+   
+</body>
+</html>

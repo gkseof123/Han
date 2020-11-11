@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+    <!--
+<h3>조건 처리를 위한 (조건문) : </h3>
+코드예제 1] 입력받은 정수가 양수인지 음수인지 출력합니다.<br>
+<script>
+ let num = Number(window.prompt("정수를 입력하세요",0))
+ if(num>0){
+     document.write(num+"은 양수입니다")
+ }else if(num<0){
+     document.write(num+"음수 입니다.")
+
+ }else{
+    document.write("0 입니다.")
+ }-->
+   <!--
+     </script>
+     연습문제 1] 입력받은 정수가 짝수인지 홀수인지 출력합니다.<br>
+     <script>
+         let num = Number(window.prompt("입력하세요",0))
+         if(num%2 == 0){
+             document.write(num+"짝수입니다.");
+         }else if(num%2 == 1){
+             document.write(num+"홀수입니다.");
+         }else{
+             document.write("0입니다.")
+         }    
+
+     </script> <br>
+
+     연습문제 2] 입력받은 점수의 학점 출력합니다.<br>
+     <script>
+         let num2 = Number(window.prompt("입력하세요"))
+         if (num2>=90){
+             document.write(num2+"A학점입니다.")
+             }else if (num2>=80){
+             document.write(num2+"B학점입니다.")
+            }else if (num2>=70){
+             document.write(num2+"C학점입니다.")
+            }else if (num2>=60){
+                document.write(num2+"D학점입니다")
+            }else {
+                document.write(num2+"F학점입니다")
+            }-->
+            <!--
+     </script> <br>
+     연습문제 3] 입력받은 4자리 년도의 윤년인지 평년이지 출력합니다.<br>
+     1.4 또는 400로 나누어 떨어지면 윤년<br>
+     2.100로 나누어 떨어지면 평년 <br>
+     3. 4로 나누어도 떨어지지 않으면 평년<br>
+     <script>
+         let num3 = Number(window.prompt("입력하세요",2020))
+         if (num3%4==0){
+             if (num3%400==0){
+             document.write(num3+"윤년 입니다.");
+            }else if (num3%100==0)
+                 document.write(num3+"윤년 입니다.")
+         }else if(num3%100){
+             document.write(num3+"평년 입니다.")
+         }
+
+
+     </script>
+    -->
+ <!--
+   <h3>다중 조건 처리 (switch조건문) :</h3>
+    코드예제 1 ] 입력받은 정수가 홀수인지 짝수인지 출력합니다.<br>
+    <script>
+    let num5 = Number(window.prompt("숫자를 입력하세요",0));
+        switch(num5%2){
+            case 0 :
+            document.write(num5+"홀수입니다.");
+            break;
+            case 1 : 
+            document.write(num5+"짝수입니다.");
+            break;
+}
+    </script> <br>
+    
+    연습문제 2 ] 입력받은 점수의 학점을 출력합니다. <br>
+    <script>
+        let num4 = Number(window.prompt("입력하세요",0))
+        switch (true){
+            case num4>= 90 :
+            document.write(num4+"A학점입니다.")
+            break;
+            case num4>= 80 :
+            document.write(num4+"B학점입니다")
+            break;
+            case num4>= 70 :
+            document.write(num4+"C학점입니다")
+            break;
+            case num4>= 60 :
+            document.write(num4+"D학점입니다")
+            break;
+            default :
+            document.write(num4+"F학점입니다")
+            break;
+        }
+            
+
+    </script>-->
+    <h3>조건처리:</h3>
+    코드예제 1] 입력받은 정수가 짝수인지 홀수인지 출력합니다.<br>
+    조건항 ? true일떄 수행코드 : false일때 수행코드 (삼향연산자)<br>
+    조건1 && 조건2 는 조건 1이 true 일때 조건2를 반드시 수행해야 합니다.<br>
+    조건1 &&조건2 는 조건 1이 false 이면 조건2 수행을 skip해야 합니다.<br>
+    조건1 || 조건2 는 조건 1이 true 일때 조건2를 반드시 수행해야 합니다.<br>
+    조건1 || 조건2 는 조건 1이 false 일때 조건2수행을 skip해야 합니다.<br>
+
+    <script>
+        let num = Number(window.prompt("정수를 입력하세여",0))
+        let result ; 
+        //num%2==0 ? result = "짝수" : result ="홀수";
+        //document.write(`${num}은${result}입니다`);
+        num%2!=0 && document.write( num+"은 홀수입니다.");
+        num%2!=0 || document.write( num+"은 짝수입니다.");
+    </script>
+    조건처리 연습문제 4 ] 세 개의 정수를 입력받아서, 세 수들중에서 최대값, 최소값, 합계, 평균을 출력합니다.<br>
+<script>
+let num1 = Number(window.prompt("정수를 입력하세요",0))
+let num2 = Number(window.prompt("정수를 입력하세요",0))
+let num3 = Number(window.prompt("정수를 입력하세요",0))
+document.write(Math.max(num1+num2+num3)+ "최대값")
+document.write(Math.min(num1+num2+num3)+ "최소값")
+document.write(Math.average(num1+num2+num3)+ "최대값")
+</script>
+    조건처리 연습문제 5 ] 몸무게와 키를 입력받아서 비만지수 계산합니다.<br>
+    bmi = 몸무게 kg/키m의 제곱
+    30.0이상 고도비만<br>
+    25.0이상 ~30.0미만 비만<br>
+    23.0이상 ~25.0미만 괴체중<br>
+    18.5이상 ~23.0미만 표준체중<br>
+    18.5미만 저체중<br>
+    <script>
+
+    </script>
+</body>
+</html>

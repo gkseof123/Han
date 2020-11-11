@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script></script>
+</head>
+<body>
+    <script>
+
+let compute = Math.trunc(Math.random()*100+1);
+document.write("UpDownGame");
+let count=5;
+do {
+     count--;
+     let challenger = Number(prompt("1~100사이에 내가 생각한 수는?", 50));
+     if(challenger==compute)  {
+            break;
+     } else if(challenger > compute)  {
+            alert ("Down~~\n기회는"+ count+"남았습니다.");
+     } else if(challenger < compute)  {
+            alert ("Up~~ \n기회는 "+count+"남았습니다.");
+     }
+     }while(count > 0);
+
+if(count > 0) {
+   alert("You Win~~ You Best !!!"); 
+}else {
+   alert("I Win~~~~~~  \n I World Best !!!"); 
+}
+
+
+    </script>
+</body>
+</html>

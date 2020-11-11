@@ -1,0 +1,2 @@
+Call back function은, 측정 함수에 매개변수로서 전달된 하무를 지칭합니다. 
+그리고 그 Call back function은 그 ㅎ마수를 전달 받은 함수 안에서 호출되게 됩니다.

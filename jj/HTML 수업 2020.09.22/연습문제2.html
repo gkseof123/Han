@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+  
+  </style>
+<script>
+ window.onload = function(){
+     //localStorage객체 getItem(key), setItem(key, value), removeItem(key)
+     let info=JSON.parse(localStorage.getItem("phonebook"));
+     if (info == null) {
+        localStorage.setItem("phonebook", JSON.stringify(new Array()));
+     }
+     storageShow();
+    //추가 버튼을 누르면 입력된 이름과 전화번호를 가져와서 변수에 저장합니다.
+    let addBtn = document.getElementById("add");
+    addBtn.onclick = function (){
+        let info=JSON.parse(localStorage.getItem("phonebook"));
+        value1 = document.getElementById("name").value;
+        value2 = document.getElementById("phone").value;
+        info[info.length] ={"name":value1, "phone": value2};
+        localStorage.setItem("phonebook", JSON.stringify(info));
+        storageShow();
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+
+    }
+    //모두 삭제 버튼 클릭 이벤트 - phonebook으로 저장된 배열을 내용을 모두 지움
+    let clearBtn = document.getElementById("clear");
+    clearBtn.onclick = function(){
+        localStorage.setItem("phonebook", JSON.stringify(new Array()));
+        storageShow();
+    }
+    }
+
+ function storageShow(){
+    let info=JSON.parse(localStorage.getItem("phonebook"));
+    let message="";
+    for (let i=0;i<info.length;i++) {
+        message+= info[i].name +", "+info[i].phone +", " +
+        "<a href='javascript:infoRemove("+i+");'>삭제</a><br>"
+    }
+    document.getElementById("output").innerHTML=message;
+ }
+ function infoRemove(indx){
+    let info=JSON.parse(localStorage.getItem("phonebook"));
+    info.splice(indx,1);
+    localStorage.setItem("phonebook", JSON.stringify(info));
+    storageShow();
+ }
+ 
+
+</script>
+</head>
+<body> 
+이벤트 처리  , JSON 데이터 처리 시험입니다. <br>
+<div id="output"></div>
+  이름: <input id="name" type=text size=8 />
+  전화: <input id="phone" type=text size=12 />  
+  <input type=button id="add" value='추가' > &nbsp;
+   <input type=button id="clear" value='모두 제거'>
+  
+</body>
+</html>

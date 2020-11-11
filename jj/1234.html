@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script></script>
+</head>
+<body>
+    <script>
+        /*
+    var array1 = ['one', 'two'];
+    var array2 = ['three', 'four'];
+    var combined = [...array1, ...array2];
+    console.log(combined);
+    var [first, second, three = 'empty', ...others] = array1;
+    console.log(first);
+    console.log(second);
+    console.log(three);
+    console.log(others);
+    function func(...args){
+        var [first,...others] = args;
+        console.log(first);
+        console.log(others);
+    }
+    func(combined);
+function func2(first,...others){
+    var firstInES6 = first;
+    var othersInES6 = others;
+    console.log(firstInES6);
+    console.log(othersInES6);
+}
+func2(array1, array2);
+*/
+/*
+function Shape(x, y){
+    this.name = 'Shape';
+    this.move(x, y);
+
+}
+Shape.create = function(x, y){
+    return new Shape(x, y);
+};
+Shape.prototype.move = function(x, y){
+    this.x = x;
+    this.y = y;
+};
+Shape.prototype.area = function(){
+    return 0;
+};
+Shape.prototype = {
+    move: function(x, y){
+        this.x = x;
+        this.y = y;
+    },
+    area:function(){
+        return 0;
+    },
+};
+var s = new Shape(0,0);
+var s2 = Shape.create(0,0);
+s.area();
+function Circle(x, y, radius){
+    Shape.call(this,x,y);
+    this.name = 'Circle';
+    this.radius = radius;
+}
+Object.assign(Circle.prototype, Shape.prototype, {
+    area: function(){
+        return this.radius * this.radius;
+    },
+});
+var c = new Circle(0,0,10);
+c.area();
+*/
+/*
+class Shape{
+    static create(x, y){
+        return new Shape(x, y);
+    }
+    name = 'Shape';
+    constructor(x,y){
+        this.move(x,y);
+    }
+    move(x,y){
+        this.x = x;
+        this.y = y;''
+    }
+    area(){
+        return 0;
+    }
+}
+var s = new Shape(0,0);
+var s1 = Shape.create(0,0);
+s.area();
+
+class Circle extends Shape {
+    constructor(x,y,radius){
+        super(x,y);
+        this.radius = radius;
+    }
+    area(){
+        if (this.radius === 0)return super.area();
+        return this.radius * this.radius;
+    }
+}
+var c = new Circle(0,0,10);
+c.area();
+*/
+var x = 0;
+var y = 0;
+var obj = { x ,y };
+
+var randomKeyString = 'other';
+var combined = {
+    ['one' + randomKeyString]: 'some value',
+};
+for (let key in combined){
+    console.log(key + ","+combined[key]);
+}
+
+var obj2 = {
+    x,
+    methodA(){ console.log('A');},
+    methodB(){ return 0; },
+};
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+    div  {         
+        border:1px Solid Black;   
+        border-radius: 10px;
+        margin:5px;
+        padding:3px;    
+    }
+    canvas  {         
+        border:1px Solid Black;               
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>       
+   $(document).ready(function(){
+      // $('div').click(function(){
+        //   var header = $('h1', this ).text();
+         //  var paragraph = $('p', this).text();
+         //  alert(header + '\n' + paragraph);
+      // })
+      let context = document.getElementById("canvas").getContext('2d');
+        $("canvas").mousedown(function(e){
+            //x1, y1 좌표 추출
+            let position = $(this).offset();
+            let x1 = e.pageX - position.left;
+            let y1 = e.pageY - position.top;
+            //그리기 시작
+            context.beginPath();
+            context.moveTo(x1, y1);
+        });
+        $("canvas").mouseup(function(e){
+            let position = $(this).offset();
+            let x2 = e.pageX - position.left;
+            let y2 = e.pageY - position.top;
+            //선 그리기
+            context.lineTo(x2, y2);
+            context.stroke();
+            //화면 출력
+        });
+        $('h1').click(function(){
+            $(this).html(function(index, html){
+                return html + '★';
+            });
+        });
+        setInterval(function(){
+           // $('h1').last().trigger('click');
+           $('h1').last().click();
+        },1000);
+        $('textarea').keyup(function(){
+            var inputLenghth =  $(this).val().length;
+            var remain = 150 - inputLenghth;
+
+            $('h1').html(remain);
+            if (remain>= 0) {
+                $('h1').css('color','black');
+            } else {
+                $('h1').css('color','red');
+            }
+        });
+        
+        
+   });
+</script>
+</head>
+<body>
+    <!--
+      <div>
+          <h1>
+            Header 1
+      </h1>
+      <p>
+         paragraph
+      </p>
+    </div>
+    <div>
+        <h1>
+          Header 2
+    </h1>
+    <p>
+       paragraph
+    </p>
+  </div>
+  <div>
+    <h1>
+      Header 3
+</h1>
+<p>
+   paragraph
+</p>
+</div>
+-->
+<canvas id="canvas" width="500" height="300">
+
+</canvas>
+<div>
+    <p>지금 내 생각을</p>
+    <h1>150</h1>
+    <textarea cols="70" rows="5"X></textarea>
+</div>
+<h1>Start:</h1>
+<h1>Start:</h1>
+</body>
+</html>

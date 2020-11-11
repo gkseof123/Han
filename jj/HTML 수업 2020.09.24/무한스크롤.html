@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // 무한 스크롤 부분
+    $(document).ready(function () {
+            // 스크롤 이벤트 발생 시
+            $(window).scroll(function () {
+                // 필요한 변수를 구합니다.
+                var scrollHeight = parseInt($(window).scrollTop()) + $(window).height();
+                var documentHeight = $(document).height();
+                console.log(parseInt($(window).scrollTop()) , $(window).height());
+                console.log($(document).height());
+                // 스크롤의 높이와 문서의 높이가 같을 때
+                if (scrollHeight >= documentHeight) {
+                    for (var i = 0; i < 10; i++) {
+                        $('<h1>계속</h1>').appendTo('body');
+                    }
+                }
+            });
+        });
+
+        // 테스트를 위해 내부에 공간을 채워둡니다.
+        $(document).ready(function () {
+            for (var i = 0; i < 20; i++) {
+                $('<h1>내려라</h1>').appendTo('body');
+            }
+        });
+  </script>
+
+
+</head>
+<body>
+<h1>빨</h1>
+<h1>주</h1>
+<h1>노</h1>
+<h1>초</h1>
+<h1>파</h1>
+<h1>남</h1>
+<h1>보</h1>
+<h1>무</h1>
+<h1>지</h1>
+<h1>개</h1>
+
+</body>
+</html>

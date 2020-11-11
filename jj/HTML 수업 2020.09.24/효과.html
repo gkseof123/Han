@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta chartset= "urf-8">
+<title></title>
+<style>
+    
+    
+    
+    div {
+        width: 100px; height: 100px;
+        background-color: blueviolet;
+
+        position: relative;
+    }
+    
+</style>
+
+<!--
+<script src = "C:\Users\KOSTA\Desktop\제이커리\제이커리1.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // 무한 스크롤 부분
+    $(document).ready(function () {
+        /*
+         $(".btn1").click(function(){
+             $('img').hide(3000);
+         });
+         $(".btn2").click(function(){
+             $('img').show(3000);
+         });
+         $(".tog1").click(function(){
+            $('img').toggle(3000, function(){
+                 alert("End")
+             });
+         });
+         $(".btn3").click(function(){
+             $('img').fadeIn();
+         });
+         $(".btn4").click(function(){
+             $('img').fadeOut();
+         });
+         $(".tog").click(function(){
+             $('img').fadeToggle();
+         });
+         $(".btn5").click(function(){
+             $('img').slideUp();
+         });
+         $(".btn6").click(function(){
+             $('img').slideDown();
+         });
+         $(".tog3").click(function(){
+             $('img').slideToggle();
+         });*/
+         /*
+         $('div').click(function(){
+             var width = $(this).css('width');
+             var height = $(this).css('height');
+             $(this).animate({
+                 width: parseInt(width) + 50,
+                 height: parseInt(height) + 50
+             }, 'slow');
+             })
+             
+         $('div').hover(function () {
+             $(this).animate({
+                 left:500
+             }, 'slow');
+         }, function(){
+             $(this).animate({
+                 left:0
+             },'slow');
+         });
+        */
+           // 이벤트를 연결합니다.
+        $('button').click(function () {
+                // 변수를 선언합니다.
+                var html = $(this).html();
+                var evalText = "$('div')." + html;
+                // 메서드를 실행합니다.
+                eval(evalText);
+            });
+
+            // 애니메이션을 시작합니다.
+            
+                $('div').animate({
+                    left: '500'
+                }, 2000).animate({
+                    left: '0'
+                }, 2000);
+            
+               
+
+    });
+  </script>
+
+
+</head>
+<body>
+    <!--
+<img src="야스오.jpg"><br>
+<button class="btn1">Hide</button>
+<button class="btn2">Show</button>  
+<button class="tog1">Toggle</button>    
+<button class="btn3">fadeIn</button>
+<button class="btn4">fadeOut</button>  
+<button class="tog">fadeToggle</button>    
+<button class="btn5">slideUp</button>
+<button class="btn6">slideDown</button>   
+<button class="tog3">slideToggle</button>        
+<div></div>
+<div></div>
+<div></div>
+    -->
+<button>stop()</button>
+<button>stop(true)</button>
+<button>stop(false, true)</button>
+<button>stop(true, true)</button>
+    -->
+<div></div><div></div>
+<div></div><div></div>
+<div></div><div></div>
+
+
+</body>
+</html>

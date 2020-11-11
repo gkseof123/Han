@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+   
+</script>
+</head>
+<body>
+    <h3> 반복 처리  :</h3>
+     
+    <script>   
+    /*   
+        for(let cnt=1 ; cnt <11 ; cnt++){
+            document.write("hello <br>");
+        }
+        */
+        /* 1~10까지 오름차순으로 출력 */
+        for(let cnt=1 ; cnt <11 ; cnt++){
+            document.write(cnt +"<br>");
+        }
+        /* 1~10까지 내림차순으로 출력 */
+        for(let cnt=10 ; cnt > 0 ; cnt--){
+            document.write(cnt +"<br>");
+        }
+        /* 1~10사이의 홀수만 출력 */ 
+        for(let cnt=1 ; cnt <11 ; cnt++){
+            if(cnt%2==1) document.write(cnt +"<br>");
+        }
+        /* 1~10사이의 홀수만 출력 */ 
+        for(let cnt=1 ; cnt <11 ; cnt+=2){
+            document.write(cnt +"<br>");
+        }
+        /* 영대문자 A ~ Z까지 출력  */
+        for(let cnt=65 ; cnt <=91 ; cnt++){
+            document.write(String.fromCharCode(cnt) +", ");
+        }
+        document.write("<br>");
+        
+        /* 1~10까지의 누적합 출력 */
+        let result = 0;
+        for(let cnt=1 ; cnt <11 ; cnt++){
+            result += cnt;
+        }
+        document.write(`1~10 누적합은 ${result} <br>`);
+        /*1~100사이의 소수(Prime Number)만 출력*/
+        for (num=2 ;num<=100 ; num++){
+            count=0;
+            for(i=2;i<num++)
+            if(num%i==0)
+            count+=1;
+            if(count==0)
+            System.out.println(num+"는소수입니다.")
+        }
+        
+        
+
+         </script>
+     
+</body>
+</html>

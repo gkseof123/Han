@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script></script>
+</head>
+<body>
+<script>
+    /*
+let student1 = { "학번" : 2020002,  
+"grade": 1,
+ "kor": 78, 
+"eng":80  , 
+"math":98, 
+"sci" :80 ,
+ "total" : function(){  return  this.kor+this.eng+this.math+this.sci }
+ };
+for (let item in student1) {
+    document.write(item+":"+student1[item]+"<br>");
+}
+document.write(student1.total()+"<br>");
+document.write(student1["total"]()+"<br>");
+*/
+function Student(sno, grade, kor, eng, math, sci) {  //객체를 정의
+        let 학번 =sno;
+        this.grade = grade;
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math;
+        this.sci = sci;
+        this.total = function(){
+            return kor+eng+math+sci;
+        }
+        Student.prototype.total = function(){
+            return this.kor+this.eng+this.math+this.sci;
+        }
+        this.avg = function(){
+            return this.total()/4;
+        }
+        }
+    
+    let s1 = new Student ( 2020001, 1,88,90,80,70); //객체 생성
+    let s2 = new Student ( 2020002, 2,66,100,75,90); //객체 생성
+    for (let item in s1) {
+    document.write(item +":"+ s1[item] +"<br>");
+    }
+    
+    document.write(s1['학번']+":"+s2.total()+","+s1.avg()+"<br>");
+    document.write(s2['학번']+":"+s2.total()+","+s2.avg()+"<br>");
+    console.dir(s1);
+
+</script>
+<hr>
+<script>
+    class Student01 {
+         constructor(sno, grade, kor, eng, math, sci) {  //속성들을 초기화 메서드 
+         this.학번 =sno;
+         this.grade = grade;
+         this.kor = kor;
+         this.eng = eng;
+         this.math = math;
+         this.sci = sci;    
+         }
+         total(){
+             return this.kor+this.eng + this.math+this.sci;
+        }
+         avg(){
+             return this.total() / 4;
+         }
+   }
+     const s3 = new Student01(2020003, 2, 60, 70, 80, 90);
+     const s4 = new Student01(2020004, 2, 90, 90, 80, 90);
+     document.write(s3.학번+":"+ s3.total() +", "+ s3.avg()+"<br>");
+     document.write(s4.학번+":"+ s4.total() +", "+ s4.avg()+"<br>");
+     console.dir(s3);
+</script>
+</body>
+</html>

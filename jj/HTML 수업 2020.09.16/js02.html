@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<!--<script src="js01.js"></script>-->
+<script>
+function myevent(){alert("당첨~");}
+
+</script>
+</head>
+<body>
+    <h3 onclick="myevent();">눌러봐♡좋은일 있을꺼야♡</h3>
+javascript 출력 방법 : <br>
+<ol>
+    <li>body영역에 출력</li>
+    <li>개발자도구 콘솔에 출력</li>
+</ol>
+    <script>
+    document.write("hello<br>");
+    document.write("hello<br>");
+    console.log("hello");
+    document.write(typeof("1234")+"<br>");
+    document.write(typeof('1234')+"<br>");
+    document.write(typeof(1234)+"<br>");
+    document.write(typeof(1234.5)+"<br>");
+    document.write(typeof(true)+"<br>");
+    /*let jumsu = window.prompt("점수를 입력해라",10);
+    document.write(jumsu + ","+typeof(jumsu)+"<br>")*/
+    let answer = window.confirm("종료하시겠습니까?")
+    document.write(answer + ","+typeof(answer)+"<br>")
+    </script>
+</body>
+</html>

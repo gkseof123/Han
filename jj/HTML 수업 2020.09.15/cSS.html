@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS기본</title>
+<!--
+    <link rel="stylesheet" href="#style.css">
+-->
+</head>
+<body>
+   CSS 적용 방법 : <br>
+   <style>
+    #d1 {border : solid 2px yellowgreen ;
+    width : 100px ;
+    height : 100px ;}
+    #d2 {
+      border : solid 2px orange ;
+    width : 100px ;
+    height : 100px ;
+    }
+    /*
+    * { color :grey}
+    
+    .lnk {color : red}
+    .lunch {color : blue}
+    div > p {color : green}
+    input[type|=email] {background-color: yellow;}
+    */
+    input:focus  {background-color: rgb(0, 195, 255);}
+    input:checked {width:50px; height:50px;}
+    a:link {color: green;}
+    a:visited {color: yellow;}
+  </style> 
+</head>
+  <body>
+      <a href="http://www.naver.com">네이버 검색</a><br>
+      text : <input type="text"    focus=true><br>
+      email : <input type="email" disabled><br>
+      search : <input type="search" enabled><br>
+      url : <input type="url" ><br>
+      취미 : <input type="checkbox" checked>코딩   &nbsp;&nbsp;
+      <input type="checkbox" >사이클링  &nbsp;&nbsp;
+      <input type="checkbox" >등산  &nbsp;&nbsp;<br>
+      CSS적용 방법 : <br>
+      <ul>
+          <li class="lnk">외부 파일을 링크 </li>
+          <li class="lnk">html파일 내부에 정의 &lt; head &gt; 영역 </li>
+          <li class="lnk">html 태그의 style속성에 정의 (인라인 방식 - 비표준) </li>
+      </ul>
+
+      <ul>
+          <li class="lunch">김밥 </li>
+          <li class="lunch">라볶이 </li>
+          <li class="lunch">햄버거 </li>
+      </ul>
+   <div id="d1">   
+       <p> 내용1  </p>
+       <article>상세 내용  
+           <p>상세 내용1 </p>
+       </article>
+   </div>
+   <div id="d2"  style="border : solid 2px blueviolet ; width : 100px ; height : 100px ;">     
+     내용2
+  </div >
+</body>
+</html>

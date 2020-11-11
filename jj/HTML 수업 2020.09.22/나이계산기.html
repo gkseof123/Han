@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+  
+  </style>
+
+</head>
+<body> 
+blur 이벤트 처리 <br>
+ 
+<input type="text" id="year" placeholder="태어난 연도를 입력하세요">
+<button type="button" id="AgeBtn">SUBMIT</button>
+<p id="resultBox">당신의 나이는: <span></span></p>
+
+
+<script>
+   
+    document.querySelector('#AgeBtn').addEventListener('click', function() {
+ var birthYear = document.querySelector('#year').value;
+ if(! birthYear) {
+ alert('태어난 연도를 입력하세요');
+ document.querySelector('#year').focus();
+ } else {
+ var today = new Date();
+ var nowYear = today.getFullYear();
+ var age = nowYear - birthYear + 0;
+ document.querySelector('#resultBox span').innerText = age;
+ }
+ });
+ 
+ 
+ 
+ 
+ </script>
+ 
+</form>
+</body>
+</html>
